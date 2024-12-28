@@ -30,7 +30,7 @@ This project is a Python script that uses YOLO (You Only Look Once) object detec
 1. Clone the repository:
     ```bash
     git clone https://github.com/whitelex/yolo-rtsp-motion.git
-    cd yolo-rtsp-security-cam
+    cd yolo-rtsp-motion
     ```
 
 2. Create and activate a virtual environment:
