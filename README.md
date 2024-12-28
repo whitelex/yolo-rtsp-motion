@@ -1,5 +1,7 @@
 # YOLO RTSP Security Camera
 
+Modified version from [PhazerTech] https://github.com/PhazerTech/yolo-rtsp-security-cam
+
 This project is a Python script that uses YOLO (You Only Look Once) object detection to monitor an RTSP (Real-Time Streaming Protocol) video stream. The script captures video frames, detects specified objects, and records the video when motion or specified objects are detected. It also supports sending webhook notifications and creating thumbnails for recorded videos.
 
 ## Features
