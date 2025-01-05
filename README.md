@@ -87,6 +87,12 @@ curl http://localhost:8000/health
 
 The response will be in JSON format and include the uptime of the application.
 
+```json
+{
+    "up_time": "0 days 02 hours 01 minutes"
+}
+```
+
 ## Scheduler
 
 A PowerShell script (`scheduler.ps1`) is included to start the application with a specified RTSP stream and YOLO configuration. The script sets the working directory, activates the virtual environment, logs the start of the application, and starts the Python application.
