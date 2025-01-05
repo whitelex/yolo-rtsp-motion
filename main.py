@@ -13,6 +13,14 @@ from sshkeyboard import listen_keyboard, stop_listening
 import requests  # Import the requests library
 from config import args, rtsp_stream, monitor, thresh, start_frames, tail_length, auto_delete, testing, frame_click, webhook_url
 from metadata import save_metadata
+import setproctitle
+from health_check import run_health_check_server  # Import the health check server
+
+# Set the process title
+setproctitle.setproctitle("Yolo RTSP")
+
+# Start the health check server
+run_health_check_server()
 
 if frame_click:
     testing = True

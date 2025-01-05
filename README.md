@@ -13,6 +13,9 @@ This project is a Python script that uses YOLO (You Only Look Once) object detec
 - **Thumbnails**: Creates thumbnails for recorded videos.
 - **Metadata**: Saves metadata about recorded videos in a JSON file.
 - **Auto-Delete**: Optionally deletes short recordings assumed to be false positives.
+- **Health Check**: Provides an HTTP endpoint to check the application's uptime.
+- **Scheduler**: Includes a PowerShell script to start the application with a specified RTSP stream and YOLO configuration.
+
 
 ## Requirements
 
@@ -50,3 +53,46 @@ Run the script with the desired options:
 
 ```bash
 python yolo-rtsp-security-cam.py --stream <RTSP_STREAM_URL> --yolo <OBJECTS_TO_DETECT> --webhook <WEBHOOK_URL>
+```
+
+## Example
+
+```bash
+python main.py --stream rtsp://username:password@192.168.1.100:554/stream --yolo person,car --webhook https://example.com/webhook
+```
+
+## Command Line Arguments
+
+`--stream`: RTSP address of the video stream.
+`--monitor`: View the live stream. If no monitor is connected, leave this disabled.
+`--yolo`: Enables YOLO object detection. Enter a comma-separated list of objects to detect.
+`--model`: Specify which YOLO model size to use. Default is yolov8n.
+`--threshold`: Determines the amount of motion required to start recording. Default is 350.
+`--start_frames`: Number of consecutive frames with motion required to start recording. Default is 3.
+`--tail_length`: Number of seconds without motion required to stop recording. Default is 8.
+`--auto_delete`: Enables auto-delete feature for short recordings assumed to be false positives.
+`--testing`: Testing mode disables recordings and prints out the motion value for each frame.
+`--frame_click`: Allows user to advance frames one by one by pressing any key. For use with testing mode on video files.
+`--webhook`: URL to send post notification when selected object detected.
+
+## Health Check
+
+The application includes a health check endpoint that provides the application's uptime. The health check server listens on port 8000 and responds to requests to the `/health` endpoint.
+
+To check the application's uptime, send an HTTP GET request to:
+
+```bash
+curl http://localhost:8000/health
+```
+
+The response will be in JSON format and include the uptime of the application.
+
+## Scheduler
+
+A PowerShell script (`scheduler.ps1`) is included to start the application with a specified RTSP stream and YOLO configuration. The script sets the working directory, activates the virtual environment, logs the start of the application, and starts the Python application.
+
+To run the scheduler script, use the following command in PowerShell:
+
+```bash
+.\scheduler.ps1
+```
