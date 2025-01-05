@@ -63,17 +63,17 @@ python main.py --stream rtsp://username:password@192.168.1.100:554/stream --yolo
 
 ## Command Line Arguments
 
-`--stream`: RTSP address of the video stream.
-`--monitor`: View the live stream. If no monitor is connected, leave this disabled.
-`--yolo`: Enables YOLO object detection. Enter a comma-separated list of objects to detect.
-`--model`: Specify which YOLO model size to use. Default is yolov8n.
-`--threshold`: Determines the amount of motion required to start recording. Default is 350.
-`--start_frames`: Number of consecutive frames with motion required to start recording. Default is 3.
-`--tail_length`: Number of seconds without motion required to stop recording. Default is 8.
-`--auto_delete`: Enables auto-delete feature for short recordings assumed to be false positives.
-`--testing`: Testing mode disables recordings and prints out the motion value for each frame.
-`--frame_click`: Allows user to advance frames one by one by pressing any key. For use with testing mode on video files.
-`--webhook`: URL to send post notification when selected object detected.
+- `--stream`: RTSP address of the video stream.
+- `--monitor`: View the live stream. If no monitor is connected, leave this disabled.
+- `--yolo`: Enables YOLO object detection. Enter a comma-separated list of objects to detect.
+- `--model`: Specify which YOLO model size to use. Default is yolov8n.
+- `--threshold`: Determines the amount of motion required to start recording. Default is 350.
+- `--start_frames`: Number of consecutive frames with motion required to start recording. Default is 3.
+- `--tail_length`: Number of seconds without motion required to stop recording. Default is 8.
+- `--auto_delete`: Enables auto-delete feature for short recordings assumed to be false positives.
+- `--testing`: Testing mode disables recordings and prints out the motion value for each frame.
+- `--frame_click`: Allows user to advance frames one by one by pressing any key. For use with testing mode on video files.
+- `--webhook`: URL to send post notification when selected object detected.
 
 ## Health Check
 
